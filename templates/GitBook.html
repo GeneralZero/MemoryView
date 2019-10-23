@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Introduction · Secure Mobile Development Best Practices | NowSecure</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-links/plugin.css">
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="styles/website.css">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="primer/mobile-security.html" />
+</head>
+
+<body>
+    <div class="book">
+        <div class="book-summary">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search" />
+            </div>
+            <nav role="navigation">
+                <ul class="summary">
+                    <li>
+                        <a href="https://www.nowsecure.com/" target="_blank" class="custom-link">NowSecure</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="chapter active" data-level="1.1" data-path="./">
+                        <a href="./"> Introduction </a>
+                    </li>
+                    <li class="chapter " data-level="1.2" data-path="primer/mobile-security.html">
+                        <a href="primer/mobile-security.html"> Mobile Security Primer </a>
+                    </li>
+                    <li class="chapter " data-level="1.3" data-path="coding-practices/">
+                        <a href="coding-practices/"> Coding Practices </a>
+                        <ul class="articles">
+                            <li class="chapter " data-level="1.3.1" data-path="coding-practices/code-complexity-and-obfuscation.html">
+                                <a href="coding-practices/code-complexity-and-obfuscation.html"> Increase Code Complexity and Use Obfuscation </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.2" data-path="coding-practices/avoid-simple-logic.html">
+                                <a href="coding-practices/avoid-simple-logic.html"> Avoid Simple Logic </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.3" data-path="coding-practices/test-third-party-libraries.html">
+                                <a href="coding-practices/test-third-party-libraries.html"> Test Third-Party libraries </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.4" data-path="coding-practices/anti-tamper-techniques.html">
+                                <a href="coding-practices/anti-tamper-techniques.html"> Implement Anti-tamper Techniques </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.5" data-path="coding-practices/securely-store-sensitive-data-in-ram.html">
+                                <a href="coding-practices/securely-store-sensitive-data-in-ram.html"> Securely Store Sensitive Data in RAM </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.6" data-path="coding-practices/understand-secure-deletion-of-data.html">
+                                <a href="coding-practices/understand-secure-deletion-of-data.html"> Understand Secure Deletion of Data </a>
+                            </li>
+                            <li class="chapter " data-level="1.3.7" data-path="coding-practices/avoid-query-string-for-sensitive-data.html">
+                                <a href="coding-practices/avoid-query-string-for-sensitive-data.html"> Avoid Query String for Sensitive Data </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter " data-level="1.4" data-path="sensitive-data/">
+                        <a href="sensitive-data/"> Handling Sensitive Data </a>
+                        <ul class="articles">
+                            <li class="chapter " data-level="1.4.1" data-path="sensitive-data/implement-secure-data-storage.html">
+                                <a href="sensitive-data/implement-secure-data-storage.html"> Implement Secure Data Storage </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.2" data-path="sensitive-data/use-secure-setting-for-cookies.html">
+                                <a href="sensitive-data/use-secure-setting-for-cookies.html"> Use SECURE Setting For Cookies </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.3" data-path="sensitive-data/fully-validate-ssl-tls.html">
+                                <a href="sensitive-data/fully-validate-ssl-tls.html"> Fully validate SSL/TLS </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.4" data-path="sensitive-data/protect-against-sslstrip.html">
+                                <a href="sensitive-data/protect-against-sslstrip.html"> Protect Against SSL Downgrade Attacks </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.5" data-path="sensitive-data/limit-use-of-uuid.html">
+                                <a href="sensitive-data/limit-use-of-uuid.html"> Limit Use of UUID </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.6" data-path="sensitive-data/treat-geolocation-data-carefully.html">
+                                <a href="sensitive-data/treat-geolocation-data-carefully.html"> Treat Geolocation Data Carefully </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.7" data-path="sensitive-data/institute-local-session-timeout.html">
+                                <a href="sensitive-data/institute-local-session-timeout.html"> Institute Local Session Timeout </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.8" data-path="sensitive-data/implement-enhanced-two-factor-authentication.html">
+                                <a href="sensitive-data/implement-enhanced-two-factor-authentication.html"> Implement Enhanced/Two-Factor Authentication </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.9" data-path="sensitive-data/protect-application-settings.html">
+                                <a href="sensitive-data/protect-application-settings.html"> Protect Application Settings </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.10" data-path="sensitive-data/hide-account-numbers-and-use-tokens.html">
+                                <a href="sensitive-data/hide-account-numbers-and-use-tokens.html"> Hide Account Numbers and Use Tokens </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.11" data-path="sensitive-data/implement-secure-network-transmission-of-sensitive-data.html">
+                                <a href="sensitive-data/implement-secure-network-transmission-of-sensitive-data.html"> Implement Secure Network Transmission Of Sensitive Data </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.12" data-path="sensitive-data/validate-input-from-client.html">
+                                <a href="sensitive-data/validate-input-from-client.html"> Validate Input From Client </a>
+                            </li>
+                            <li class="chapter " data-level="1.4.13" data-path="sensitive-data/avoid-storing-app-data-in-backups.html">
+                                <a href="sensitive-data/avoid-storing-app-data-in-backups.html"> Avoid Storing App Data in Backups </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="book-body">
+            <div class="body-inner">
+                <div class="book-header" role="navigation">
+                    <h1>
+																						<i class="fa fa-circle-o-notch fa-spin"></i>
+																						<a href=".">Introduction</a>
+																					</h1>
+                </div>
+                <div class="page-wrapper" tabindex="-1" role="main">
+                    <div class="page-inner">
+                        <div id="book-search-results">
+                            <div class="search-noresults">
+                                <section class="normal markdown-section">
+                                    <a class="links-link btn fa fa-file-pdf-o pull-left" href="https://info.nowsecure.com/Secure-Mobile-Dev.html" target="_blank">&#xA0;&#xA0;Read PDF</a>
+                                    <h1 id="secure-mobile-development">Secure Mobile Development</h1>
+                                    <p>At NowSecure we spend a lot of time attacking mobile apps - hacking, breaking encryption, finding flaws, penetration testing, and looking for sensitive data stored insecurely. We do it for the right reasons - to help developers make their apps more secure. The best way to verify that your app follows secure mobile development best practices is to perform security assessments of the app, which can include automated mobile app security testing,
+                                        <a href="https://www.owasp.org/index.php/Fuzzing" target="_blank">fuzzing</a>, manual penetration testing, and more. This document represents some of the knowledge we share with our clients and partners.
+                                        <strong>We are driven to advance mobile app security worldwide.</strong>
+                                    </p>
+                                    <h2 id="using-this-guide">Using this Guide</h2>
+                                    <p>This guide gives specific recommendations to use during your development process. The descriptions of attacks and security recommendations in this report are not exhaustive or perfect, but you will get practical advice that you can use to make your apps more secure.</p>
+                                    <p>We revise our best practices periodically and invite
+                                        <a href="https://github.com/nowsecure/secure-mobile-development/pulls" target="_blank">contributions</a>, and the updated guide is published
+                                        <a href="https://books.nowsecure.com/secure-mobile-development/" target="_blank">here</a> as changes are accepted into the main repository.
+                                    </p>
+                                    <p>To learn about all the vectors that attackers might use on your app, read our
+                                        <a href="primer/mobile-security.html">Mobile Security Primer</a>.
+                                    </p>
+                                    <h3 id="table-of-contents">Table of Contents</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="primer/mobile-security.html">Mobile Security Primer</a>
+                                        </li>
+                                        <li>
+                                            <a href="coding-practices/">Coding Practices</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="coding-practices/code-complexity-and-obfuscation.html">2.1 Increase Code Complexity and Use Obfuscation</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/avoid-simple-logic.html">2.2 Avoid Simple Logic</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/test-third-party-libraries.html">2.3 Test Third-Party libraries</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/anti-tamper-techniques.html">2.4 Implement Anti-tamper Techniques</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/securely-store-sensitive-data-in-ram.html">2.5 Securely Store Sensitive Data in RAM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/understand-secure-deletion-of-data.html">2.6 Understand Secure Deletion of Data</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coding-practices/avoid-query-string-for-sensitive-data.html">2.7 Avoid Query String for Sensitive Data</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="sensitive-data/">Handling Sensitive Data</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="sensitive-data/implement-secure-data-storage.html">3.1 Implement Secure Data Storage</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/use-secure-setting-for-cookies.html">3.2 Use SECURE Setting For Cookies</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/fully-validate-ssl-tls.html">3.3 Fully validate SSL/TLS</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/protect-against-sslstrip.html">3.4 Protect Against SSL Downgrade Attacks</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/limit-use-of-uuid.html">3.5 Limit Use of UUID</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/treat-geolocation-data-carefully.html">3.6 Treat Geolocation Data Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/institute-local-session-timeout.html">3.7 Institute Local Session Timeout</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/implement-enhanced-two-factor-authentication.html">3.8 Implement Enhanced/Two-Factor Authentication</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/protect-application-settings.html">3.9 Protect Application Settings</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/hide-account-numbers-and-use-tokens.html">3.10 Hide Account Numbers and Use Tokens</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/implement-secure-network-transmission-of-sensitive-data.html">3.11 Implement Secure Network Transmission Of Sensitive Data</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/validate-input-from-client.html">3.12 Validate Input From Client</a>
+                                                </li>
+                                                <li>
+                                                    <a href="sensitive-data/avoid-storing-app-data-in-backups.html">3.13 Avoid Storing App Data in Backups</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="caching-logging/">Caching and Logging</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="caching-logging/avoid-caching-app-data.html">4.1 Avoid Caching App Data</a>
+                                                </li>
+                                                <li>
+                                                    <a href="caching-logging/avoid-crash-logs.html">4.2 Avoid Crash Logs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="caching-logging/limit-caching-of-username.html">4.3 Limit Caching of Username</a>
+                                                </li>
+                                                <li>
+                                                    <a href="caching-logging/carefully-manage-debug-logs.html">4.4 Carefully Manage Debug Logs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="caching-logging/be-aware-of-the-keyboard-cache.html">4.5 Be Aware of the Keyboard Cache</a>
+                                                </li>
+                                                <li>
+                                                    <a href="caching-logging/be-aware-of-copy-paste.html">4.6 Be Aware of Copy and Paste</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="webviews/">Webviews</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="webviews/prevent-framing-and-clickjacking.html">5.1 Prevent Framing and Clickjacking</a>
+                                                </li>
+                                                <li>
+                                                    <a href="webviews/protect-against-csrf-with-form-tokens.html">5.2 Protect against CSRF with form tokens</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="ios/">iOS</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="ios/use-the-keychain-carefully.html">6.1 Use the Keychain Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="ios/avoid-cached-application-snapshots.html">6.2 Avoid Cached Application Snapshots</a>
+                                                </li>
+                                                <li>
+                                                    <a href="ios/implement-protections-against-buffer-overflow-attacks.html">6.3 Implement Protections Against Buffer Overflow Attacks</a>
+                                                </li>
+                                                <li>
+                                                    <a href="ios/avoid-caching-https-requests-responses.html">6.4 Avoid Caching HTTP(S) Requests/Responses</a>
+                                                </li>
+                                                <li>
+                                                    <a href="ios/implement-app-transport-security.html">6.5 Implement App Transport Security (ATS)</a>
+                                                </li>
+                                                <li>
+                                                    <a href="ios/implement-touch-id-properly.html">6.6 Implement Touch ID Properly</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="android/">Android</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="android/implement-file-permissions-carefully.html">7.1 Implement File Permissions Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/implement-intents-carefully.html">7.2 Implement Intents Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/check-activities.html">7.3 Check Activities</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/use-broadcasts-carefully.html">7.4 Use Broadcasts Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/implement-pendingintents-carefully.html">7.5 Implement PendingIntents Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/protect-application-services.html">7.6 Protect Application Services</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/avoid-intent-sniffing.html">7.7 Avoid Intent Sniffing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/implement-content-providers-carefully.html">7.8 Implement Content Providers Carefully</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/webview-best-practices.html">7.9 Follow WebView Best Practices</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/avoid-storing-cached-camera-images.html">7.10 Avoid Storing Cached Camera Images</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/avoid-gui-objects-caching.html">7.11 Avoid GUI Objects Caching</a>
+                                                </li>
+                                                <li>
+                                                    <a href="android/android-apk-signing.html">7.12 Sign Android APKs</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="servers/">Servers</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="servers/web-server-configuration.html">8.1 Implement Proper Web Server Configuration</a>
+                                                </li>
+                                                <li>
+                                                    <a href="servers/server-side-ssl-configuration.html">8.2 Properly Configure Server-side SSL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="servers/web-servers-proper-session-management.html">8.3 Use Proper Session Management</a>
+                                                </li>
+                                                <li>
+                                                    <a href="servers/protect-and-pen-test-web-services.html">8.4 Protect and Perform Penetration Testing of Web Services</a>
+                                                </li>
+                                                <li>
+                                                    <a href="servers/protect-internal-resources.html">8.5 Protect Internal Resources</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                            <div class="search-results">
+                                <div class="has-results">
+                                    <h1 class="search-results-title">
+																										<span class='search-results-count'></span> results matching "
+																										<span class='search-query'></span>"
+																									</h1>
+                                    <ul class="search-results-list"></ul>
+                                </div>
+                                <div class="no-results">
+                                    <h1 class="search-results-title">No results matching "
+																										<span class='search-query'></span>"
+																									</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="primer/mobile-security.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Mobile Security Primer">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+        <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+                    "page": {
+                        "title": "Introduction",
+                        "level": "1.1",
+                        "depth": 1,
+                        "next": {
+                            "title": "Mobile Security Primer",
+                            "level": "1.2",
+                            "depth": 1,
+                            "path": "primer/mobile-security.md",
+                            "ref": "primer/mobile-security.md",
+                            "articles": []
+                        },
+                        "dir": "ltr"
+                    },
+                    "config": {
+                        "plugins": ["edit-link", "ga", "links"],
+                        "styles": {
+                            "website": "styles/website.css",
+                            "pdf": "styles/pdf.css"
+                        },
+                        "pluginsConfig": {
+                            "search": {},
+                            "lunr": {
+                                "maxIndexSize": 1000000,
+                                "ignoreSpecialCharacters": false
+                            },
+                            "fontsettings": {
+                                "theme": "white",
+                                "family": "sans",
+                                "size": 2
+                            },
+                            "highlight": {},
+                            "links": {
+                                "links": [{
+                                    "label": "Read PDF",
+                                    "icon": "fa fa-file-pdf-o",
+                                    "url": "https://info.nowsecure.com/Secure-Mobile-Dev.html"
+                                }]
+                            },
+                            "ga": {
+                                "configuration": "auto",
+                                "token": "UA-4968988-13"
+                            },
+                            "sharing": {
+                                "facebook": true,
+                                "twitter": true,
+                                "google": false,
+                                "weibo": false,
+                                "instapaper": false,
+                                "vk": false,
+                                "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                            },
+                            "edit-link": {
+                                "label": "Edit This Page",
+                                "base": "https://github.com/nowsecure/secure-mobile-development/tree/master"
+                            },
+                            "theme-default": {
+                                "styles": {
+                                    "website": "styles/website.css",
+                                    "pdf": "styles/pdf.css",
+                                    "epub": "styles/epub.css",
+                                    "mobi": "styles/mobi.css",
+                                    "ebook": "styles/ebook.css",
+                                    "print": "styles/print.css"
+                                },
+                                "showLevel": false
+                            }
+                        },
+                        "theme": "default",
+                        "pdf": {
+                            "pageNumbers": true,
+                            "fontSize": 12,
+                            "fontFamily": "Arial",
+                            "paperSize": "a4",
+                            "chapterMark": "pagebreak",
+                            "pageBreaksBefore": "/",
+                            "margin": {
+                                "right": 62,
+                                "left": 62,
+                                "top": 56,
+                                "bottom": 56
+                            }
+                        },
+                        "structure": {
+                            "langs": "LANGS.md",
+                            "readme": "README.md",
+                            "glossary": "GLOSSARY.md",
+                            "summary": "SUMMARY.md"
+                        },
+                        "variables": {},
+                        "title": "Secure Mobile Development Best Practices | NowSecure",
+                        "language": "en",
+                        "links": {
+                            "sidebar": {
+                                "NowSecure": "https://www.nowsecure.com/"
+                            }
+                        },
+                        "gitbook": "*"
+                    },
+                    "file": {
+                        "path": "README.md",
+                        "mtime": "2017-06-08T14:56:27.000Z",
+                        "type": "markdown"
+                    },
+                    "gitbook": {
+                        "version": "3.2.2",
+                        "time": "2017-06-08T14:56:58.636Z"
+                    },
+                    "basePath": ".",
+                    "book": {
+                        "language": "en"
+                    }
+                });
+            });
+        </script>
+    </div>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    <script src="../gitbook/gitbook-plugin-links/plugin.js"></script>
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+    <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+</body>
+
+</html>
