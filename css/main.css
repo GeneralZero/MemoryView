@@ -1,0 +1,114 @@
+/* Better Defaults for Headers */
+.md-typeset h1{
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: -.5em;
+}
+.md-typeset h2 {
+    font-size: 1.75em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: -.3em;
+}
+
+.md-typeset h3{
+    font-size: 1.5em;
+    margin-top: .3em;
+    margin-bottom: .3em;
+    margin-left: -.2em;
+}
+
+.md-typeset h4{
+    font-size: 1.25em;
+    margin-top: .3em;
+    margin-bottom: .3em;
+    margin-left: -.1em;
+}
+
+.md-typeset p {
+    margin-top: 0px;
+    margin-bottom: .5em;
+}
+
+.md-typeset strong{
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+
+/* Add Background color for the Folders in the Nagation to diffrentate them from files */
+label.md-nav__link{
+    background-color: rgba(120, 162, 177, 0.1);
+    margin-top: 0px;
+    padding-top: .3125em;
+    padding-bottom: .3125em;
+    padding-left: .5em;
+    border-bottom: 1px solid #35346d;
+}
+
+
+/* fix background Color for Code blocks */
+/* fix tabs-size for Code blocks */
+.highlight code{
+    background: #282a36;
+    color: #f8f8f2;
+    -moz-tab-size: 4; /* Firefox */
+    tab-size: 4;
+}
+
+/* Fix Better spacing on Lists*/
+
+.md-typeset ul, 
+.md-typeset ul li, 
+.md-typeset ul li p,
+.md-typeset ul li ul{
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.md-nav__title {
+    font-size: 1.25em;
+}
+
+div.highlight{
+    border-radius: .5em;
+}
+
+/* Fix Colors for clipboard */
+.highlight .md-clipboard {
+    color: #6272a4;
+}
+
+.highlight .md-clipboard:hover,
+.highlight .md-clipboard:focus {
+    color: #f8f8f2;
+}
+
+/* Create Border separting Nav from content */
+.md-content{
+    border-left: 1px solid #eeebee;
+}
+
+/* Default CSS for Tables */
+table {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+td,
+th {
+    padding: .25rem .5rem;
+    border: 1px solid #e5e5e5;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+    background-color: #f9f9f9;
+}
+
+
+/* Better Defaults for Content */
+body {
+    text-rendering: optimizeLegibility;
+}
+

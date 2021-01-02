@@ -1,0 +1,138 @@
+site_name: Memory
+site_description: Notes Ive collected Over the years
+site_author: GeneralZero
+
+docs_dir: /opt/Memory
+
+theme:
+  name: material
+  palette:
+    # Toggle light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    # Toggle dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: en
+  favicon: images/favicon.png
+  features:
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/GeneralZer0
+      name: GeneralZer0 on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/generalzero/
+      name: generalzero on Github
+    - icon: fontawesome/regular/envelope
+      link: mailto://notes@generalzero.org
+      name: Send me an email
+
+extra_css:
+  #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css
+  - assets/stylesheets/dracula.css
+  - assets/stylesheets/custom.css
+
+extra_javascript:
+  - assets/javascripts/katex_init.js
+  - assets/javascripts/custom.js
+  - assets/javascripts/svgbob.js
+  #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+
+dev_addr: '127.0.0.1:8000'
+
+repo_url: https://github.com/generalzero/
+repo_name: Github
+
+plugins:
+  - mermaid2
+  #- mkdocs-nav-enhancements
+  #- section-index
+  - exclude:
+      glob:
+        - "Work/*"
+        - "Hobbies/*"
+        - "*.pdf"
+        - "*.gz"
+        - ".gitignore"
+      regex:
+        - '.*\.(tmp|bin|tar)$'
+  - search:
+      prebuild_index: python
+      lang: en
+  - exclude-search:
+      exclude:
+        - "Work/*"
+        - "Hobbies/*"
+        - "*.pdf"
+        - "*.gz"
+        - ".gitignore"
+  - minify:
+      minify_html: true
+      minify_js: true
+      htmlmin_opts:
+        remove_comments: true
+  #- enumerate-headings
+
+markdown_extensions:
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+        - name: latex
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+        - name: sequence
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: graph
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: table
+          class: ascii-table
+          format: !!python/name:custom_codefences.fence_table_format
+        - name: arm
+          class: arm-asm
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: circut
+          class: circut-diagram
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: gdb
+          class: console
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: tree
+          class: tree
+          format: !!python/name:pymdownx.superfences.fence_div_format
+        - name: ghostscript
+          class: tree
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.b64
+  - pymdownx.betterem
+  #- pymdownx.highlight
+  - pymdownx.saneheaders
+  - sane_lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+  - nl2br
+  - common_fix:CommonFixExtention

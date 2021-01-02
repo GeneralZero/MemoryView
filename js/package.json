@@ -1,0 +1,21 @@
+{
+  "name": "svgbob",
+  "collaborators": [
+    "Jovansonlee Cesar <ivanceras@gmail.com>"
+  ],
+  "description": "Transform your ascii diagrams into happy little SVG",
+  "version": "0.5.0-alpha.11",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivanceras/svgbob"
+  },
+  "files": [
+    "svgbob_bg.wasm",
+    "svgbob.js",
+    "svgbob.d.ts"
+  ],
+  "module": "svgbob.js",
+  "types": "svgbob.d.ts",
+  "sideEffects": false
+}

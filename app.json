@@ -1,9 +1,0 @@
-{ 
-	"ignore_paths": [".gitignore", "Work/", ""],
-	"theme_name": "template/index.html",
-	"baseurl": "/",
-	"notes_directory": "/opt/Memory/",
-	"hostname": "",
-	"title": "My Memory Dump",
-	"use_git_ignore": true
-}
