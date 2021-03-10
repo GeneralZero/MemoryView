@@ -1,8 +1,8 @@
 site_name: Memory
-site_description: Notes Ive collected Over the years
+site_description: Notes I've collected over the years
 site_author: GeneralZero
 
-docs_dir: /opt/Memory
+docs_dir: /opt/MemoryViewer/memory/
 
 theme:
   name: material
@@ -47,11 +47,14 @@ extra_css:
   #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css
   - assets/stylesheets/dracula.css
   - assets/stylesheets/custom.css
+  - assets/stylesheets/custom.css
+  - assets/stylesheets/sortable-theme-light.css
 
 extra_javascript:
   - assets/javascripts/katex_init.js
   - assets/javascripts/custom.js
   - assets/javascripts/svgbob.js
+  - assets/javascripts/sortable.min.js
   #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
   - https://unpkg.com/mermaid/dist/mermaid.min.js
@@ -62,15 +65,21 @@ repo_url: https://github.com/generalzero/
 repo_name: Github
 
 plugins:
-  - mermaid2
-  #- mkdocs-nav-enhancements
-  #- section-index
+  #- mermaid2:
+  #  arguments:
+  #    theme: 'dark'
+  - git-revision-date-localized:
+      type: timeago
+      timezone: America/New_York
   - exclude:
       glob:
         - "Work/*"
         - "Hobbies/*"
         - "*.pdf"
         - "*.gz"
+        - "*.py"
+        - "*.ps1"
+        - "*.php"
         - ".gitignore"
       regex:
         - '.*\.(tmp|bin|tar)$'
@@ -89,7 +98,20 @@ plugins:
       minify_js: true
       htmlmin_opts:
         remove_comments: true
+  - mkdocs-simple-hooks:
+      hooks:
+        on_nav: "custom_mkdoc_plugins:reorder_nav"
+        on_post_build: "custom_mkdoc_plugins:copy_files"
+  - ezlinks:
+      wikilinks: true
   #- enumerate-headings
+  #- autolinks 
+
+  #- section-index
+  #- literate-nav:
+  #  nav_file: SUMMARY.md
+
+
 
 markdown_extensions:
   - pymdownx.superfences:
@@ -108,7 +130,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
         - name: table
-          class: ascii-table
+          class: sortable-theme-bootstrap
           format: !!python/name:custom_codefences.fence_table_format
         - name: arm
           class: arm-asm

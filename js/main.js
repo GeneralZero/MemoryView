@@ -65,5 +65,5 @@ DeleteElement(document.querySelector("a.md-content__button"))
 DeleteElement(document.querySelector("article.md-content__inner h1"))
 
 //Reorder the Nav list
-ReorderNavList(document.querySelector("ul.md-nav__list"))
+//ReorderNavList(document.querySelector("ul.md-nav__list"))
 

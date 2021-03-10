@@ -54,7 +54,7 @@ def fence_table_format(source, language, class_name, options, md, **kwargs):
         classes.insert(0, class_name)
 
     id_value = ' id="{}"'.format(id_value) if id_value else ''
-    classes = ' class="{}"'.format(' '.join(classes)) if classes else ''
+    classes = ' class="{}" data-sortable'.format(' '.join(classes)) if classes else ''
     attrs = ' ' + ' '.join('{k}="{v}"'.format(k=k, v=v) for k, v in attrs.items()) if attrs else ''
 
     #Start Parsing table
