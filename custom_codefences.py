@@ -1,5 +1,5 @@
 import html, re
-
+from markdown_svgbob.wrapper import text2svg
 
 def parse_table(source):
     table_headers = []
@@ -109,6 +109,12 @@ def fence_div_format(source, language, class_name, options, md, **kwargs):
     attrs = ' ' + ' '.join('{k}="{v}"'.format(k=k, v=v) for k, v in attrs.items()) if attrs else ''
 
     return '<div%s%s%s>%s</div>' % (id_value, classes, attrs, html.escape(source))
+
+def svgbob_format(source, language, class_name, options, md, **kwargs):
+    print("Triggerd svgbob")
+    byte_data = text2svg(source)
+    return byte_data.decode("utf-8") 
+
 
 
 if __name__ == "__main__":

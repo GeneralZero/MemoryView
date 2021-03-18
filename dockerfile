@@ -5,7 +5,11 @@ RUN pip install mkdocs Pygments pymdown-extensions lunr mkdocs-gitbook mkdocs-ex
 RUN pip install mkdocs-exclude mkdocs-enumerate-headings-plugin mkdocs-minify-plugin
 RUN pip install mkdocs-redirects mkdocs-mermaid2-plugin
 RUN pip install mkdocs-nav-enhancements mkdocs-simple-hooks mkdocs-section-index
-RUN pip install mkdocs-git-revision-date-localized-plugin mkdocs-ezlinks-plugin
+RUN pip install mkdocs-git-revision-date-localized-plugin mkdocs-ezlinks-plugin markdown-svgbob
+RUN curl -sSf https://sh.rustup.rs | sh -s -- -y
+RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN cargo install svgbob_cli
 
 COPY ./ /opt/MemoryViewer
 WORKDIR /opt/MemoryViewer

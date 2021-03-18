@@ -8,6 +8,7 @@ files_to_copy = {'css/main.css': 'site/assets/stylesheets/custom.css',
 'css/highlighting/dracula.css': 'site/assets/stylesheets/dracula.css',
 'js/katex_init.js': 'site/assets/javascripts/katex_init.js',
 'js/svgbob.js': 'site/assets/javascripts/svgbob.js',
+'js/svgbob_bg.wasm': 'site/assets/javascripts/svgbob_bg.wasm',
 'css/sortable/sortable-theme-light.css': 'site/assets/stylesheets/sortable-theme-light.css',
 'js/sortable.min.js': 'site/assets/javascripts/sortable.min.js',
 

@@ -53,7 +53,7 @@ extra_css:
 extra_javascript:
   - assets/javascripts/katex_init.js
   - assets/javascripts/custom.js
-  - assets/javascripts/svgbob.js
+  #- assets/javascripts/svgbob.js
   - assets/javascripts/sortable.min.js
   #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
@@ -117,6 +117,9 @@ markdown_extensions:
   - pymdownx.superfences:
       preserve_tabs: true
       custom_fences:
+        - name: circut
+          class: circut
+          format: !!python/name:custom_codefences.svgbob_format
         - name: math
           class: arithmatex
           format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
@@ -134,9 +137,6 @@ markdown_extensions:
           format: !!python/name:custom_codefences.fence_table_format
         - name: arm
           class: arm-asm
-          format: !!python/name:pymdownx.superfences.fence_div_format
-        - name: circut
-          class: circut-diagram
           format: !!python/name:pymdownx.superfences.fence_div_format
         - name: gdb
           class: console
